@@ -25,9 +25,9 @@ st.title('Financial Projection Calculator')
 start_year = st.number_input('Started Working Year', min_value=2000, max_value=2024, value=2018, step=1)
 monthly_income = st.number_input('Monthly Income', min_value=1000, max_value=2000000, value=21000, step=1000)
 monthly_expenses = st.number_input('Monthly Expenses', min_value=1000, max_value=2000000, value=18000, step=500)
-salary_increment = st.slider('Salary Increment (%)', 0, 100, 10, 0.1) / 100
-expenses_increment = st.slider('Expenses Increment (%)', 0, 100, 8, 0.1) / 100
-return_percentage = st.slider('Return Percentage (%)', 0, 100, 3, 0.1) / 100
+salary_increment = st.slider('Salary Increment (%)', 0, 100, 10, step=None) / 100
+expenses_increment = st.slider('Expenses Increment (%)', 0, 100, 8, step=None) / 100
+return_percentage = st.slider('Return Percentage (%)', 0, 100, 3, step=None) / 100
 
 if st.button('Calculate'):
     runway, savings_after_investment, extra_returns, savings_without_investment = calculate_financials(
